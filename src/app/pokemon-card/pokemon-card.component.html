@@ -1,0 +1,13 @@
+<div *ngIf="pokemon && pokemonSpecies">
+    <div class="pokemonCard">
+        <div class="flex justify-end">
+            <p class="font-bold text-xl">{{pokemonSpecies.name}}</p>
+            <img class="h-20 " src="./assets/images/pokeball.png" alt="ups">
+        </div>
+        <img class="" src={{pokemon.sprites}} alt={{pokemonSpecies.name}}>
+        <p class="">{{pokemon.types}}</p>
+        <p class="">{{pokemon.weight}} kg</p>
+        <p class="">{{pokemon.height}} m</p>
+        <p class="">{{pokemonSpecies.description}}</p>
+    </div>
+</div>
