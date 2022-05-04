@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Pokemon } from '../pokemon';
 import { PokemonSpecies } from '../pokemonSpecies';
+import { getGermanType } from '../translators';
 
 @Component({
   selector: 'app-pokemon-card',
-  templateUrl: './pokemon-card.component.html',
-  styleUrls: ['./pokemon-card.component.css']
+  templateUrl: './pokemon-card.component.html'
 })
 
 export class PokemonCardComponent implements OnInit {
@@ -15,6 +15,7 @@ export class PokemonCardComponent implements OnInit {
   id!: number
   pokemon?: Pokemon
   pokemonSpecies?: PokemonSpecies
+  getGermanType = getGermanType
 
   constructor(private apiService: ApiService) { }
 

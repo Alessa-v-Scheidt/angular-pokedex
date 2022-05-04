@@ -15,7 +15,7 @@
         <div>
           <div class="flex flex-row items-center">
             <p class="font-bold text-lg pr-4">Typen:</p>
-            <div class="font-bold text-lg bg-red-600 p-1 mr-2 rounded-full w-20 flex justify-center text-white" *ngFor="let type of pokemon.types">{{ type }}</div>
+            <div class="font-bold text-lg bg-red-600 p-1 mr-2 rounded-full w-20 flex justify-center text-white " *ngFor="let type of pokemon.types" [class]="type">{{ getGermanType(type) }}</div>
           </div>
         </div>
         <p class="font-bold text-lg">Fähigkeiten: {{ pokemon.abilities }}</p>

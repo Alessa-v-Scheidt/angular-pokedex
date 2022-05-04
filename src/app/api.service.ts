@@ -38,7 +38,7 @@ export class ApiService {
       .pipe(
         map(data => {
           const sprites = data.sprites.front_default
-          const types = this.getTypesGerman(data.types.map(entry => entry.type.name))
+          const types = data.types.map(entry => entry.type.name)
           const abilities = data.abilities.map(entry => entry.ability.name)
           const weight = data.weight * 0.1 
           const height = data.height / 10
@@ -78,14 +78,6 @@ export class ApiService {
       return '#0' + id
     } else {
       return '#00' + id
-    }
-  }
-
-  getTypesGerman(types: string[]): string[]{
-    if(types == ['poison','grass'] || ['grass','poison']){
-      return ['Pflanze','Gift']
-    }else{
-      return []
     }
   }
 }
