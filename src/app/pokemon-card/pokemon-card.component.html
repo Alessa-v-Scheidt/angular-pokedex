@@ -1,13 +1,28 @@
 <div *ngIf="pokemon && pokemonSpecies">
-    <div class="pokemonCard">
-        <div class="flex justify-end">
-            <p class="font-bold text-xl">{{pokemonSpecies.name}}</p>
-            <img class="h-20 " src="./assets/images/pokeball.png" alt="ups">
-        </div>
-        <img class="" src={{pokemon.sprites}} alt={{pokemonSpecies.name}}>
-        <p class="">{{pokemon.types}}</p>
-        <p class="">{{pokemon.weight}} kg</p>
-        <p class="">{{pokemon.height}} m</p>
-        <p class="">{{pokemonSpecies.description}}</p>
+  <div class="pokemonCard">
+    <div class="flex justify-start items-center">
+      <p class="font-bold text-xl">{{ pokemonSpecies.id }}</p>
+      <img class="h-12" src="./assets/images/pokeball.png" alt="ups" />
+      <p class="font-bold text-xl">{{ pokemonSpecies.name }}</p>
     </div>
+    <section class="flex items-center">
+      <img
+        class="h-60 pixelated"
+        src="{{ pokemon.sprites }}"
+        alt="{{ pokemonSpecies.name }}"
+      />
+      <div class="ml-48">
+        <div>
+          <div class="flex flex-row items-center">
+            <p class="font-bold text-lg pr-4">Typen:</p>
+            <div class="font-bold text-lg bg-red-600 p-1 mr-2 rounded-full w-20 flex justify-center text-white" *ngFor="let type of pokemon.types">{{ type }}</div>
+          </div>
+        </div>
+        <p class="font-bold text-lg">Fähigkeiten: {{ pokemon.abilities }}</p>
+        <p class="font-bold text-lg">Größe: {{ pokemon.height }} m</p>
+        <p class="font-bold text-lg">Gewicht: {{ pokemon.weight }} kg</p>
+      </div>
+    </section>
+    <p class="pb-6">{{ pokemonSpecies.description }}</p>
+  </div>
 </div>

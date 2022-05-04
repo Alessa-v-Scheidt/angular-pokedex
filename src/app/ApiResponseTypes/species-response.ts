@@ -13,5 +13,6 @@ export interface SpeciesResponse {
         version: {
             name: string
         }
-    }[]
+    }[],
+    id: number
 }

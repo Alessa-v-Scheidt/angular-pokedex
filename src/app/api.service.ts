@@ -38,13 +38,15 @@ export class ApiService {
       .pipe(
         map(data => {
           const sprites = data.sprites.front_default
-          const types = data.types.map(entry => entry.type.name)
+          const types = this.getTypesGerman(data.types.map(entry => entry.type.name))
+          const abilities = data.abilities.map(entry => entry.ability.name)
           const weight = data.weight * 0.1 
           const height = data.height / 10
 
           return {
             sprites: sprites,
             types: types,
+            abilities: abilities,
             weight: weight,
             height: height,
           }
@@ -58,13 +60,32 @@ export class ApiService {
         map(data => {
           const name = data.names.find(entry => entry.language.name == 'de')?.name || ''
           const description = data.flavor_text_entries.find(entry => entry.language.name == 'de' && entry.version.name == 'x')?.flavor_text || ''
-
+          const dexId = this.getNationalDexId(id)
 
           return {
             name: name,
             description: description,
+            id: dexId,
           }
         })
       );
+  }
+
+  getNationalDexId(id: number): string{
+    if (id > 99) {
+      return '#' + id
+    } else if (id > 9) {
+      return '#0' + id
+    } else {
+      return '#00' + id
+    }
+  }
+
+  getTypesGerman(types: string[]): string[]{
+    if(types == ['poison','grass'] || ['grass','poison']){
+      return ['Pflanze','Gift']
+    }else{
+      return []
+    }
   }
 }

@@ -10,4 +10,9 @@ export interface PokemonResponse {
             name: string
         }
     }[]
+    abilities: {
+        ability: {
+            name: string
+        }
+    }[]
 }

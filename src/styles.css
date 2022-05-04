@@ -10,5 +10,87 @@
     margin: 0.5rem;
     color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 1000px;
+    max-width: 900px;
+    background-color: white;
 }
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+.wallpaper{
+    background-image: url(./assets/images/pokedex_wallpaper.jpg);
+    background-size: auto;
+}
+
+.normal { 
+    background-color: #C5C0B7; 
+  }
+  
+.fire { 
+    background-color: #EC400D; 
+  }
+  
+.water { 
+    background-color: #2F91F2; 
+  }
+  
+.electric { 
+    background-color: #FAB716; 
+  }
+  
+.grass { 
+    background-color: #68BC2D; 
+  }
+  
+.ice { 
+    background-color: #A4E7FD; 
+  }
+  
+.fighting { 
+    background-color: #7D321B; 
+  }
+  
+.poison { 
+    background-color: #914493; 
+  }
+  
+.ground { 
+    background-color: #CEAD53; 
+  }
+  
+.flying { 
+    background-color: #92A5F2; 
+  }
+  
+.psychic { 
+    background-color: #EA457E; 
+  }
+  
+.bug { 
+    background-color: #9EAD19; 
+  }
+  
+.rock { 
+    background-color: #B69E54; 
+  }
+  
+.ghost { 
+    background-color: #5C5CAD; 
+  }
+  
+.dragon { 
+    background-color: #725BDA; 
+  }
+  
+.dark { 
+    background-color: #4D392C; 
+  }
+  
+.steel { 
+    background-color: #B0B0BE; 
+  }
+  
+.fairy { 
+    background-color: #F1ABF1; 
+  }
