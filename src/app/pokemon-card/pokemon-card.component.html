@@ -11,18 +11,32 @@
         src="{{ pokemon.sprites }}"
         alt="{{ pokemonSpecies.name }}"
       />
-      <div class="ml-48">
+      <div class="ml-48 space-y-2">
         <div>
           <div class="flex flex-row items-center">
             <p class="font-bold text-lg pr-4">Typen:</p>
-            <div class="font-bold text-lg bg-red-600 p-1 mr-2 rounded-full w-20 flex justify-center text-white " *ngFor="let type of pokemon.types" [class]="type">{{ getGermanType(type) }}</div>
+            <div
+              class="font-bold text-lg bg-red-600 p-1 mr-2 rounded-full w-20 flex justify-center text-white"
+              *ngFor="let type of pokemon.types"
+              [class]="type"
+            >
+              {{ getGermanType(type) }}
+            </div>
           </div>
         </div>
-        <p class="font-bold text-lg">Fähigkeiten: {{ pokemon.abilities }}</p>
+        <div>
+          <p class="font-bold text-lg">Fähigkeiten:</p>
+          <div
+            class="font-bold text-lg pl-4"
+            *ngFor="let ability of pokemon.abilities"
+          >
+            {{ ability }}
+          </div>
+        </div>
         <p class="font-bold text-lg">Größe: {{ pokemon.height }} m</p>
         <p class="font-bold text-lg">Gewicht: {{ pokemon.weight }} kg</p>
       </div>
     </section>
-    <p class="pb-6">{{ pokemonSpecies.description }}</p>
+    <p class="pb-6 pt-4">{{ pokemonSpecies.description }}</p>
   </div>
 </div>

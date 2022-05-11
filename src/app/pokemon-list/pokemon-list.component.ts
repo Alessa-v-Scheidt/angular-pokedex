@@ -8,7 +8,7 @@ import { Pokemon } from '../pokemon';
 })
 export class PokemonListComponent implements OnInit {
 
-  idList: number[]= [1,2,3,4,5,6,7,8,9]
+  idList = Array.from({length: 151}, (_, i) => i + 1);
 
   // im Kostruktor wird der Service autowired (d.h. ich bekomme automatisch eine Instanz vom API-Service)
   constructor(private apiService: ApiService) { }

@@ -40,7 +40,7 @@ export class ApiService {
           const sprites = data.sprites.front_default
           const types = data.types.map(entry => entry.type.name)
           const abilities = data.abilities.map(entry => entry.ability.name)
-          const weight = data.weight * 0.1 
+          const weight = Math.round(data.weight * 0.1) 
           const height = data.height / 10
 
           return {
